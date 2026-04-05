@@ -46,9 +46,45 @@
 
 第0回〜第4回で PyTorch とデータの扱い方を学んだ後、第5回以降では Robomimic データセットを用いて、決定論的な時系列モデルから確率的モデル、さらに最新の生成モデルベースの手法へと段階的にステップアップしていきます。
 
+## 環境構築
+
+### 1. venv で仮想環境を作成
+
+```bash
+python3 -m venv venv
+source venv/bin/activate
+```
+
+### 2. パッケージのインストール
+
+```bash
+pip install -r requirements.txt
+```
+
+> GPU を使う場合は、先に [PyTorch 公式](https://pytorch.org/get-started/locally/) から CUDA 対応のインストールコマンドを確認し、`torch` と `torchvision` をインストールしてから `requirements.txt` を実行してください。
+>
+> ```bash
+> # 例: CUDA 12.4 の場合
+> pip install torch torchvision --index-url https://download.pytorch.org/whl/cu124
+> pip install -r requirements.txt
+> ```
+
+### 3. Jupyter Notebook の起動
+
+```bash
+jupyter notebook
+```
+
+### Google Colab の場合
+
+各ノートブックの先頭にある `!pip install ...` セルを実行すれば、追加の環境構築は不要です。
+
 ## 主な使用ライブラリ
 
 - PyTorch (`torch`, `torch.nn`, `torch.optim`)
+- torchvision
 - NumPy
 - Matplotlib
-- torchvision
+- tqdm
+- torchinfo
+- pandas
